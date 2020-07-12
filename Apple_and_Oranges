@@ -1,0 +1,74 @@
+# https://www.hackerrank.com/challenges/apple-and-orange/problem
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the countApplesAndOranges function below.
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+
+    
+    ap_d=[0]*len(apples)
+    or_d=[0]*len(oranges)
+    
+    a_count=0
+    o_count=0
+    
+    #calculate the distances of apples
+    for i in range(len(apples)):
+        ap_d[i]=apples[i]+a
+    #print(ap_d)
+    
+    #calculate the distances of oranges
+    for i in range(len(oranges)):
+        or_d[i]=oranges[i]+b
+    #print(or_d)
+    
+    
+    # check the apples in the range of s and t
+    
+    for i in ap_d:
+        if i >= s and i <=t:
+            a_count+=1
+            
+    # check the oranges in the range of s and t
+    for i in or_d:
+        if i >= s and i <=t:
+            o_count+=1
+    
+    
+    # print the values
+    print(a_count)
+    print(o_count)
+    
+        
+if __name__ == '__main__':
+    st = input().split()
+
+    s = int(st[0])
+
+    t = int(st[1])
+
+    ab = input().split()
+
+    a = int(ab[0])
+
+    b = int(ab[1])
+
+    mn = input().split()
+
+    m = int(mn[0])
+
+    n = int(mn[1])
+
+    apples = list(map(int, input().rstrip().split()))
+
+    oranges = list(map(int, input().rstrip().split()))
+
+    countApplesAndOranges(s, t, a, b, apples, oranges)
+
+# https://www.hackerrank.com/challenges/apple-and-orange/problem
